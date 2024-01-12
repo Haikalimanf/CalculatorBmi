@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="14dp"
+    android:background="@drawable/warnabg"
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/bannerBmi"
+        android:layout_width="402dp"
+        android:layout_height="170dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banner_bmi" />
+
+    <RadioGroup
+        android:id="@+id/option_jenis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/jenisKelamin"
+        app:layout_constraintTop_toBottomOf="@id/bannerBmi"
+        >
+
+        <TextView
+            android:id="@+id/titikdua6"
+            android:layout_marginStart="5dp"
+            android:layout_width="4dp"
+            android:layout_height="23dp"
+            android:text="@string/titikdua"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/Checkboxlaki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pria"
+            android:textColor="@color/white"/>
+
+        <RadioButton
+            android:id="@+id/CheckboxWanita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wanita"
+            android:textColor="@color/white"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/beratBadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/berat_badan"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jenisKelamin"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/InputBerat"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:hint="@string/masukan_berat"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintStart_toEndOf="@+id/beratBadan"
+        app:layout_constraintTop_toBottomOf="@+id/option_jenis" />
+
+    <TextView
+        android:id="@+id/jenisKelamin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/jenis_kelamin"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerBmi"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tinggiBadan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tinggi_badan"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/beratBadan"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/inputTinggi"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:hint="@string/masukan_tinggi"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintStart_toEndOf="@+id/tinggiBadan"
+        app:layout_constraintTop_toBottomOf="@+id/InputBerat" />
+
+    <Button
+        android:id="@+id/button_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textCalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/inputTinggi"
+        />
+
+    <TextView
+        android:id="@+id/textKilogram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/kg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toEndOf="@+id/InputBerat"
+        app:layout_constraintTop_toTopOf="@+id/InputBerat"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textCentimeter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/cm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/inputTinggi"
+        app:layout_constraintTop_toBottomOf="@+id/textKilogram"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/resultBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/titikdua3"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate" />
+
+    <TextView
+        android:id="@+id/textBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/bmi_kamu"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate" />
+
+    <TextView
+        android:id="@+id/textIndexBerat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/index_berat"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textKebutuhanProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/protein_harian_yang_dibutuhkan"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIndexBerat" />
+
+    <TextView
+        android:id="@+id/resultIndexBerat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/titikdua4"
+        app:layout_constraintTop_toBottomOf="@+id/resultBMI" />
+
+    <TextView
+        android:id="@+id/resultProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textKebutuhanProtein"
+        app:layout_constraintTop_toBottomOf="@+id/resultIndexBerat" />
+
+
+
+    <TextView
+        android:id="@+id/titikdua1"
+        android:layout_width="4dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/titikdua"
+        android:textColor="@color/white"
+        android:layout_marginStart="17dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/InputBerat"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toEndOf="@+id/beratBadan"
+        app:layout_constraintTop_toBottomOf="@+id/option_jenis" />
+
+    <TextView
+        android:id="@+id/titikdua2"
+        android:layout_width="4dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/titikdua"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/inputTinggi"
+        app:layout_constraintStart_toEndOf="@+id/tinggiBadan"
+        app:layout_constraintTop_toBottomOf="@+id/InputBerat" />
+
+    <TextView
+        android:id="@+id/titikdua3"
+        android:layout_width="4dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/titikdua"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textBMI"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate" />
+
+    <TextView
+        android:id="@+id/titikdua4"
+        android:layout_width="4dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/titikdua"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textIndexBerat"
+        app:layout_constraintTop_toBottomOf="@+id/titikdua3" />
+
+    <TextView
+        android:id="@+id/titikdua5"
+        android:layout_width="4dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/titikdua"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textKebutuhanProtein"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculate" />
+
+    <TextView
+        android:id="@+id/textgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/gram"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/resultProtein"
+        app:layout_constraintTop_toBottomOf="@+id/resultIndexBerat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
